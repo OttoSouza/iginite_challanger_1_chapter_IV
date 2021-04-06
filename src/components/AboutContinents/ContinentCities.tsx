@@ -1,8 +1,9 @@
 import React from "react";
 import { Heading, Grid } from "@chakra-ui/react";
 import Cities from "./Cities";
+import { ContinentProps } from "../../pages/continents/[slug]";
 
-export function ContinentCities() {
+export function ContinentCities({ continent }: ContinentProps) {
   return (
     <>
       <Heading fontWeight="500" fontSize={["2xl", "4xl"]} my="10">
@@ -23,11 +24,9 @@ export function ContinentCities() {
         justifyContent="center"
         mb="5"
       >
-        <Cities />
-        <Cities />
-        <Cities />
-        <Cities />
-        <Cities />
+        {continent.all_cities.map((city) => (
+          <Cities key={city.name} name={city.name} country={city.country} />
+        ))}
       </Grid>
     </>
   );

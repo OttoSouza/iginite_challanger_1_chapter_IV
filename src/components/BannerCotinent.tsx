@@ -1,13 +1,17 @@
 import React from "react";
 import { Flex, Heading } from "@chakra-ui/react";
+interface BannerContinentProps {
+  title: string;
+  slider_image: string;
+}
 
-export function BannerCotinent() {
+export function BannerCotinent({ title, slider_image }: BannerContinentProps) {
   return (
     <>
       <Flex
         width="100%"
         height={["150px", "350px", "500px"]}
-        bgImage="url('/europe.png')"
+        bgImage={`url('${slider_image}')`}
         bgSize="cover"
         bgRepeat="no-repeat"
         bgPosition="100% 50%"
@@ -21,7 +25,7 @@ export function BannerCotinent() {
           fontSize={["3xl", "5xl"]}
           color="whitesmoke"
         >
-          Europa
+          {title}
         </Heading>
       </Flex>
     </>

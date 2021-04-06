@@ -1,9 +1,9 @@
 import { Box, Image, Flex, Text } from "@chakra-ui/react";
+import { RichText } from "prismic-dom";
 
-
-export default function Cities() {
+export default function Cities({ name, country }) {
   return (
-    <Box h="279px" w="256px" borderRadius="lg" mb="10">
+    <Box h="279px" w="256px" borderRadius="lg" mb="10" >
       <Image src="/london.jpeg" />
       <Flex
         alignItems="center"
@@ -20,11 +20,10 @@ export default function Cities() {
           justifyContent="center"
           mt="5"
           pb="6"
-          pl='1'
-
+          pl="1"
         >
-          <Text>Londres</Text>
-          <Text>Reino Unido</Text>
+          <Text>{name}</Text>
+          <Text>{RichText.asText(country)}</Text>
         </Flex>
         <Image
           w="80px"

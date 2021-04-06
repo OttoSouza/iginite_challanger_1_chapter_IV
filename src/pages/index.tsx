@@ -4,15 +4,36 @@ import { Header } from "../components/Header";
 import { Banner } from "../components/Banner";
 import { Divider } from "../components/Divider";
 import { SwiperComponent } from "../components/Swiper";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import AboutWorlTrip from "../components/AboutWorldTrip/index";
 import { useRouter } from "next/dist/client/router";
-export default function Home() {
+import { GetStaticProps } from "next";
+import { getPrismic } from "../services/prismic";
+import Prismic from "@prismicio/client";
+import {RichText} from "prismic-dom"
+
+interface HomeProps {
+  continents: {
+    slug: string;
+    title: string;
+    description: string;
+    image: string;
+  }[];
+}
+
+export default function Home({ continents }: HomeProps) {
   const { isFallback } = useRouter();
 
   if (isFallback) {
     return (
-      <Flex alignItems="center" justifyContent="center" w="100vw" h="100vh" flexDir="column" gridGap={6}>
+      <Flex
+        alignItems="center"
+        justifyContent="center"
+        w="100vw"
+        h="100vh"
+        flexDir="column"
+        gridGap={6}
+      >
         <Image src="/Logo.svg" />
         <Spinner
           thickness="2px"
@@ -34,11 +55,13 @@ export default function Home() {
       <VStack>
         <Header />
 
+       
         <Banner />
 
         <VStack w="100%" alignItems="center" padding="4">
           <AboutWorlTrip />
           <Divider />
+
 
           <Heading
             textAlign="center"
@@ -52,9 +75,29 @@ export default function Home() {
             Então escolha seu continente
           </Heading>
 
-          <SwiperComponent />
+          <SwiperComponent continents={continents} />
         </VStack>
       </VStack>
     </>
   );
 }
+
+export const getStaticProps: GetStaticProps = async () => {
+  const prismic = getPrismic();
+  const response = await prismic.query([
+    Prismic.predicates.at("document.type", "continents"),
+  ]);
+
+  const continents = response.results.map((continent) => {
+    return {
+      slug: continent.uid,
+      title: continent.data.title,
+      description: continent.data.description,
+      image: continent.data.slider_image.url,
+    };
+  });
+  console.log(JSON.stringify(response, null, 2))
+  return {
+    props: { continents },
+  };
+};

@@ -1,7 +1,8 @@
 import { Flex, Grid, Text, Stack } from "@chakra-ui/react";
 import React from "react";
+import { ContinentProps } from "../../pages/continents/[slug]";
 
-export function Content() {
+export function Content({ continent }: ContinentProps) {
   return (
     <Grid
       templateColumns={[
@@ -13,10 +14,7 @@ export function Content() {
       gap={2}
     >
       <Text textAlign="justify" fontSize={["lg", "2xl"]}>
-        A Europa é, por convenção, um dos seis continentes do mundo.
-        Compreendendo a península ocidental da Eurásia, a Europa geralmente
-        divide-se da Ásia a leste pela divisória de águas dos montes Urais, o
-        rio Ural, o mar Cáspio, o Cáucaso, e o mar Negro a sudeste
+        {continent.about_continent}
       </Text>
 
       <Flex
@@ -30,7 +28,7 @@ export function Content() {
             fontWeight="medium"
             color="orange.300"
           >
-            50
+            {continent.number_cities}
           </Text>
           <Text fontSize={["md", "xl"]} fontWeight={["medium", "bold"]}>
             paises
@@ -42,7 +40,8 @@ export function Content() {
             fontWeight="medium"
             color="orange.300"
           >
-            50
+            {continent.number_languages}
+            
           </Text>
           <Text fontSize={["md", "xl"]} fontWeight={["medium", "bold"]}>
             linguas
@@ -54,7 +53,7 @@ export function Content() {
             fontWeight="medium"
             color="orange.300"
           >
-            27
+            {continent.number_cities}
           </Text>
           <Text fontSize={["md", "xl"]} fontWeight={["medium", "bold"]}>
             cidades +100
