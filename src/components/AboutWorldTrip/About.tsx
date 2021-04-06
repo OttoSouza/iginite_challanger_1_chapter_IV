@@ -20,12 +20,13 @@ export function About({ img, title }: AboutProps) {
   });
   return (
     <Flex
-      w="80px"
-      h="80px"
+      w={["60px", "60px", "60px", "80px"]}
+      h={["60px", "60px", "60px", "80px"]}
       flexDirection={["row", "column"]}
       alignItems="center"
       justifyContent="center"
       gridGap="6"
+      mb="14"
     >
       {isWideVersion ? (
         <Image src={img} w={180} h={85} />
@@ -34,7 +35,7 @@ export function About({ img, title }: AboutProps) {
           •
         </Text>
       )}
-      <Heading color="gray.600" fontSize={["lg", "xl", "2xl"]}>
+      <Heading color="gray.600" fontSize={["md", "lg", "xl", "2xl"]}>
         {title}
       </Heading>
     </Flex>

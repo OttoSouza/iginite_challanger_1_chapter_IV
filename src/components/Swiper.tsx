@@ -32,10 +32,18 @@ interface SwiperComponentProps {
 
 export const SwiperComponent = ({ continents }: SwiperComponentProps) => {
   return (
-    <Flex w="100%" h={["250px", "450px"]} maxW="1440px" mx="auto" mb="10">
+    <Flex
+      w="100%"
+      h={["250px", "450px"]}
+      maxW="1440px"
+      mx="auto"
+      mb={["5", "10"]}
+    >
       <Swiper
-        width={1440}
-        height={450}
+        autoplay={{
+          delay:4000,
+        }}
+        style={{width: '100%', flex: '1'}}
         slidesPerView={1}
         spaceBetween={0}
         navigation

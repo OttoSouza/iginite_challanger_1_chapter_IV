@@ -82,7 +82,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
   return {
     paths,
-    fallback: "blocking",
+    fallback: true,
   };
 };
 
@@ -103,9 +103,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     all_cities: response.data.all_cities,
   };
 
-  console.log(JSON.stringify(response, null, 2));
   return {
     props: { continent },
-    // revalidate: 60 * 60 * 24, // 24 horas
+    revalidate: 60 * 60 * 24, // 24 horas
   };
 };
