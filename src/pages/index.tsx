@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { VStack, Heading, Spinner, Flex, Image } from "@chakra-ui/react";
+import { VStack, Heading, Spinner, Flex, Image} from "@chakra-ui/react";
 import { Header } from "../components/Header";
 import { Banner } from "../components/Banner";
 import { Divider } from "../components/Divider";
@@ -10,7 +10,7 @@ import { useRouter } from "next/dist/client/router";
 import { GetStaticProps } from "next";
 import { getPrismic } from "../services/prismic";
 import Prismic from "@prismicio/client";
-import {RichText} from "prismic-dom"
+
 
 interface HomeProps {
   continents: {
@@ -23,6 +23,7 @@ interface HomeProps {
 
 export default function Home({ continents }: HomeProps) {
   const { isFallback } = useRouter();
+
 
   if (isFallback) {
     return (

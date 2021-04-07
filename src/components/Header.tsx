@@ -3,14 +3,18 @@ import {
   Image,
   Box,
   Icon,
+  IconButton,
+  useColorMode,
 } from "@chakra-ui/react";
-import { RiArrowLeftLine } from "react-icons/ri";
+import {RiSunLine, RiMoonLine } from "react-icons/ri";
+import {MdKeyboardArrowLeft } from "react-icons/md";
 import Link from "next/link";
 interface HeaderProps {
   hasSlug?: boolean;
 }
 export function Header({ hasSlug }: HeaderProps) {
-  
+  const { colorMode, toggleColorMode } = useColorMode();
+
   return (
     <Flex
       as="header"
@@ -30,14 +34,36 @@ export function Header({ hasSlug }: HeaderProps) {
         >
           <Link href="/">
             <a>
-              <Icon as={RiArrowLeftLine} />
+              <Icon as={MdKeyboardArrowLeft} boxSize={8}/>
             </a>
           </Link>
-          <Image src="/Logo.svg" w={["80px", '184px']}/>
+          <Image src="/Logo.svg" w={["80px", "184px"]} />
           <Box></Box>
         </Flex>
       ) : (
-        <Image src="/Logo.svg" w={["80px", '184px']}/>
+        <Flex
+          w="100%"
+          maxW="1440px"
+          alignItems="center"
+          justifyContent="space-between"
+        >
+          <Box></Box>
+          <Image src="/Logo.svg" w={["80px", "184px"]} />
+          <IconButton
+            aria-label="sun and moon"
+            icon={
+              colorMode === "light" ? (
+                <RiSunLine size="20" />
+              ) : (
+                <RiMoonLine size="20" />
+              )
+            }
+            variant="outline"
+            colorScheme="gray"
+            isRound={true}
+            onClick={toggleColorMode}
+          />
+        </Flex>
       )}
     </Flex>
   );
