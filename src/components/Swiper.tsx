@@ -45,7 +45,7 @@ export const SwiperComponent = ({ continents }: SwiperComponentProps) => {
         }}
         style={{width: '100%', flex: '1'}}
         slidesPerView={1}
-        spaceBetween={0}
+        spaceBetween={180}
         navigation
         pagination={{ clickable: true }}
         onSwiper={(swiper) => console.log(swiper)}

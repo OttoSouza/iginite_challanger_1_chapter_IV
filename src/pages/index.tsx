@@ -96,7 +96,7 @@ export const getStaticProps: GetStaticProps = async () => {
       image: continent.data.slider_image.url,
     };
   });
-  console.log(JSON.stringify(response, null, 2))
+
   return {
     props: { continents },
   };
