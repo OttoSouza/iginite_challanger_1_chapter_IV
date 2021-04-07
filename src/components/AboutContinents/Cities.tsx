@@ -23,7 +23,7 @@ export default function Cities({ name, country }) {
           pl="1"
         >
           <Text>{name}</Text>
-          <Text>{RichText.asText(country)}</Text>
+          <Text>{country}</Text>
         </Flex>
         <Image
           w="80px"
