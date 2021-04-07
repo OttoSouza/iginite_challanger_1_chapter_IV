@@ -1,7 +1,9 @@
 # World Trip
 
-Desafio do Ignite da RocketSeat,
-Criar um layout responsivel utilizando o NextJs.
+Desafio do Ignite da RocketSeat.
+Utilizando NextJs, SSG.
+Criar um layout futuristico com Chakra.
+Dark Mode ativado.
 
 # Frameworks
 
@@ -11,7 +13,4 @@ Criar um layout responsivel utilizando o NextJs.
 
 #
 
-<div>
-
-<div>
 <img src="./public/Home.png" alt="drawing" width="1000"/>
