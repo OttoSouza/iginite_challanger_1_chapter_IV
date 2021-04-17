@@ -1,13 +1,22 @@
 # World Trip
 
-Desafio do Ignite da RocketSeat,
+Desafio do Ignite da RocketSeat
+
 Criar um layout responsivel utilizando o NextJs.
 
 # Frameworks
 
-* Swiper - Carousel
-* Chakra - CSS declarativo
-* React-Icons - Pacote de Icones
+ ✅ Swiper - Carousel
+  * Criar o slider da aplicação
+
+ ✅ Chakra - CSS declarativo
+  * Usando para criar toda a estilização do projeto
+
+ ✅ React-Icons - Pacote de Icones
+  * Icones da aplicação
+
+ ✅ Prismic - CMS
+  * Utilizando par gerar os dados dinamicamente.
 
 #
 

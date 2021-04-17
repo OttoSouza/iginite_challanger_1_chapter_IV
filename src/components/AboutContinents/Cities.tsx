@@ -1,7 +1,8 @@
-import { Box, Image, Flex, Text } from "@chakra-ui/react";
-import { RichText } from "prismic-dom";
+import { Box, Image, Flex, Text, useColorMode } from "@chakra-ui/react";
 
 export default function Cities({ name, country }) {
+
+  const {colorMode} = useColorMode()
   return (
     <Box h="279px" w="256px" borderRadius="lg" mb="10" >
       <Image src="/london.jpeg" />
@@ -22,8 +23,8 @@ export default function Cities({ name, country }) {
           pb="6"
           pl="1"
         >
-          <Text>{name}</Text>
-          <Text>{country}</Text>
+          <Text color={colorMode==="light" ? "" : "gray.600"}>{name}</Text>
+          <Text color={colorMode==="light" ? "" : "gray.600"}>{country}</Text>
         </Flex>
         <Image
           w="80px"

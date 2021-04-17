@@ -8,13 +8,17 @@ export const theme = extendTheme({
 
   fonts: {
     heading: "Poppins",
-    body: "Poppins"
+    body: "Poppins",
   },
 
   styles: {
     global: (props) => ({
-      bg: props.colorMode === "light" ? "" : "",
-      color: props.colorMode === "light" ? "" : "",
+      "html, body": {
+        bg: props.colorMode === "light" ? "gray.50" : "",
+      },
+      "hr":{
+        bg: props.colorMode === "light" ? "black" : "white"
+      }
     }),
   },
 });

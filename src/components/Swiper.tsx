@@ -41,9 +41,9 @@ export const SwiperComponent = ({ continents }: SwiperComponentProps) => {
     >
       <Swiper
         autoplay={{
-          delay:4000,
+          delay: 4000,
         }}
-        style={{width: '100%', flex: '1'}}
+        style={{ width: "100%", flex: "1" }}
         slidesPerView={1}
         spaceBetween={180}
         navigation
@@ -70,7 +70,7 @@ export const SwiperComponent = ({ continents }: SwiperComponentProps) => {
                 <a>
                   <Heading
                     fontSize={["2xl", "3xl", "5xl"]}
-                    color="gray.100"
+                    color="gray.300"
                     fontWeight="bold"
                     textAlign="center"
                   >
