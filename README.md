@@ -2,7 +2,7 @@
 
 
  * Projeto desenvolvido pela rockseat. A ideia é desenvolver um site de automação do zero, usando o layout do figma juntamento com o ChakraUi para seu desenvolvimento.
- 
+
 <br>
 
 
@@ -26,13 +26,9 @@
 # 🧑‍💻 Densenvolvimento das telas
 
 
-✔ SignIn
+✔ Pagina Inicial
 
-✔ Dashboard
-
-✔ Usuario
-
-✖️ Automação - Formularios 
+✔ Informações de cada continente
 
 <br>
 
