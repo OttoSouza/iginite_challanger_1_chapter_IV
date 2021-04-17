@@ -4,6 +4,7 @@ Desafio do Ignite da RocketSeat
 
 Criar um layout responsivel utilizando o NextJs.
 
+
 # Frameworks
 
  ✅ Swiper - Carousel
@@ -20,7 +21,4 @@ Criar um layout responsivel utilizando o NextJs.
 
 #
 
-<div>
-
-<div>
 <img src="./public/Home.png" alt="drawing" width="1000"/>
